@@ -72,6 +72,16 @@ namespace Sirb_Maria_Lab7.Data
             return _database.DeleteAsync(slist);
         }
 
+        public Task<int> DeleteListProductAsync(ListProduct listp)
+        {
+            return _database.DeleteAsync(listp);
+        }
+
+        public Task<List<ListProduct>> GetListProducts()
+        {
+            return _database.QueryAsync<ListProduct>("select * from ListProduct");
+        }
+
 
         public Task<int> SaveListProductAsync(ListProduct listp)
         {
